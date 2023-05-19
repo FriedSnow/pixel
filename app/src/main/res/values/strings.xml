@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name" translatable="false">Pixel-Paint</string>
+    <string name="Alpha">Альфа</string>
+    <string name="Red">Красный</string>
+    <string name="Green">Зеленый</string>
+    <string name="Blue">Синий</string>
+    <string name="Clear">Очистить холст</string>
+    <string name="Save">Сохранить</string>
+    <string name="Start">Старт</string>
+    <string name="size_key" translatable="false">file.key</string>
+</resources>

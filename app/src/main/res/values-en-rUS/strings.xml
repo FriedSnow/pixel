@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Alpha">Alpha</string>
+    <string name="Red">Red</string>
+    <string name="Green">Green</string>
+    <string name="Blue">Blue</string>
+    <string name="Clear">Clear canvas</string>
+    <string name="Save">Save</string>
+    <string name="Start">Start</string>
+</resources>
