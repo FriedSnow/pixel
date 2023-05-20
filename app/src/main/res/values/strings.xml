@@ -8,4 +8,9 @@
     <string name="Save">Сохранить</string>
     <string name="Start">Старт</string>
     <string name="size_key" translatable="false">file.key</string>
+    <string name="fill_red">Залить красным</string>
+    <string name="fill_green">Залить зеленым</string>
+    <string name="fill_blue">Заливть синим</string>
+    <string name="fill_custom">Залить выбранным</string>
+    <string name="grid_side">Размер стороны сетки:</string>
 </resources>

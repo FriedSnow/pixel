@@ -129,21 +129,41 @@ public class StartActivity extends AppCompatActivity {
         adjustGridView();               //применить настройки грида
     }
 
-
-
     private void adjustGridView() {                 //настройки грида
         //TODO а̶д̶а̶п̶т̶и̶в̶н̶а̶я̶ ̶в̶ы̶с̶о̶т̶a̶ ̶к̶л̶е̶т̶к̶и̶ ̶(̶=̶ш̶и̶р̶и̶н̶а̶)̶
         gridView.setNumColumns(side);               //установка количества столбцов, количество рядов подтянется само,
         // тк квадратный корень из числа стороны во второй степени
         gridView.setVerticalSpacing(1);             //сетка, можно и без неё
         gridView.setHorizontalSpacing(1);
+
     }
 
     public void toClear(MenuItem item) {
         for(int i = 0; i < pxn; i++){
-            gridView.getChildAt(i).setBackgroundColor(Color.argb(255,255,255,255));
+            gridView.getChildAt(i).setBackgroundColor(Color.argb(0,0,0,0));
         }
     }
+    public void toRed(MenuItem item) {
+        for(int i = 0; i < pxn; i++){
+            gridView.getChildAt(i).setBackgroundColor(Color.argb(255,255,0,0));
+        }
+    }
+    public void toGreen(MenuItem item) {
+        for(int i = 0; i < pxn; i++){
+            gridView.getChildAt(i).setBackgroundColor(Color.argb(255,0,255,0));
+        }
+    }
+    public void toBlue(MenuItem item) {
+        for(int i = 0; i < pxn; i++){
+            gridView.getChildAt(i).setBackgroundColor(Color.argb(255,0,0,255));
+        }
+    }
+    public void toKek(MenuItem item) {
+        for(int i = 0; i < pxn; i++){
+            gridView.getChildAt(i).setBackgroundColor(Color.argb(cA,cR,cG,cB));
+        }
+    }
+
 
     public void toSave(MenuItem item) {
 
@@ -177,8 +197,8 @@ public class StartActivity extends AppCompatActivity {
 
             TextView textView = view.findViewById(R.id.text_view);
             //textView.setText("");                                   //заполнение массива пустыми символами чтобы работало
-            int wid = gridView.getWidth()/(side+10);                //получение ширины и +10 к стороне чтобы не плющило (?)
-            textView.setTextSize(TypedValue.DENSITY_DEFAULT, wid);  //установка высоты строки через размер текста
+            int wid = gridView.getWidth()/(side+(side/2));            //получение ширины и +(side/2) к стороне чтобы не плющило (?)
+            textView.setTextSize(TypedValue.DENSITY_DEFAULT, wid);    //установка высоты строки через размер текста
 
             return view;
         }
@@ -195,8 +215,4 @@ public class StartActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
-
-
-
-
 }

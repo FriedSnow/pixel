@@ -4,7 +4,26 @@
         android:id="@+id/action_settings"
         android:title="@string/Clear"
         android:onClick="toClear">
-
+    </item>
+    <item
+        android:id="@+id/action_red"
+        android:title="@string/fill_red"
+        android:onClick="toRed">
+    </item>
+    <item
+        android:id="@+id/action_green"
+        android:title="@string/fill_green"
+        android:onClick="toGreen">
+    </item>
+    <item
+        android:id="@+id/action_blue"
+        android:title="@string/fill_blue"
+        android:onClick="toBlue">
+    </item>
+    <item
+        android:id="@+id/action_kek"
+        android:title="@string/fill_custom"
+        android:onClick="toKek">
     </item>
     <item
         android:id="@+id/action_save"

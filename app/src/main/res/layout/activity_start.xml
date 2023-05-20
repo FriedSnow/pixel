@@ -9,42 +9,54 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="64dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="32dp"
-        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/style_button"
+        android:gravity="center"
+        android:onClick="toStart"
+        android:text="@string/Start"
         android:textColor="@color/white_chess"
         android:textSize="18sp"
-        android:gravity="center"
-        android:background="@drawable/style_button"
-        android:text="@string/Start"
-        android:onClick="toStart"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="84dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="48dp"
-        android:background="@drawable/style_button"
-        android:text="TextView"
-        android:onClick="to16"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="84dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="136dp"
-        android:background="@drawable/style_button"
-        android:text="TextView"
-        android:onClick="to32"
+<!--    <EditText-->
+<!--        android:id="@+id/editSize"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="number"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/textView"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/textView"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/textView"-->
+<!--        android:importantForAutofill="no" />-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
+        android:hint="@string/grid_side"
+        android:textColorHint="@color/white_chess"
+        app:boxBackgroundColor="@color/green_main"
+        app:boxBackgroundMode="filled"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editSize"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,4 +7,9 @@
     <string name="Clear">Clear canvas</string>
     <string name="Save">Save</string>
     <string name="Start">Start</string>
+    <string name="fill_red">Fill red</string>
+    <string name="fill_green">Fill green</string>
+    <string name="fill_blue">Fill blue</string>
+    <string name="fill_custom">Fill custom</string>
+    <string name="grid_side">Grid side size</string>
 </resources>
