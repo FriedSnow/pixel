@@ -76,7 +76,8 @@
         android:min="1"
         android:progress="16"
         android:max="32"
-
+        android:progressDrawable="@drawable/progress_fill_size"
+        android:thumb="@drawable/thumb_size"
         app:layout_constraintBottom_toTopOf="@id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
