@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/style_button"
         android:gravity="center"
@@ -23,41 +23,30 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textInputLayout" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <EditText-->
-<!--        android:id="@+id/editSize"-->
-<!--        android:layout_width="wrap_content"-->
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/textInputLayout"-->
+<!--        android:layout_width="0dp"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:ems="10"-->
-<!--        android:inputType="number"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/textView"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/textView"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/textView"-->
-<!--        android:importantForAutofill="no" />-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="64dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:hint="@string/grid_side"-->
+<!--        android:textColorHint="@color/white_chess"-->
+<!--        app:boxBackgroundColor="@color/green_main"-->
+<!--        app:boxBackgroundMode="filled"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="8dp"
-        android:hint="@string/grid_side"
-        android:textColorHint="@color/white_chess"
-        app:boxBackgroundColor="@color/green_main"
-        app:boxBackgroundMode="filled"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/editSize"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:inputType="number" />-->
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editSize"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="number" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
     <SeekBar
         android:id="@+id/seekSize"
@@ -68,13 +57,32 @@
         android:layout_marginBottom="16dp"
         android:min="16"
         android:max="32"
-        app:layout_constraintBottom_toTopOf="@id/textInputLayout"
+        app:layout_constraintBottom_toTopOf="@id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-
-
         app:layout_constraintStart_toStartOf="parent">
-
-
     </SeekBar>
 
+    <TextView
+        android:id="@+id/textSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/grid_side"
+        android:textStyle="bold"
+        android:textColor="@color/white_chess"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekSize"
+        app:layout_constraintStart_toStartOf="@+id/seekSize"/>
+
+    <TextView
+        android:id="@+id/textSize1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="16"
+        android:textColor="@color/white_chess"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/seekSize"
+        app:layout_constraintStart_toEndOf="@+id/textSize"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

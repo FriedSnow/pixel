@@ -13,6 +13,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     static int size;
@@ -25,12 +26,14 @@ public class MainActivity extends AppCompatActivity {
 //        String text = et.getText().toString();
 //        size = Character.getNumericValue(text.length());
 
-        EditText editText = findViewById(R.id.editSize);
+//        EditText editText = findViewById(R.id.editSize);
         SeekBar seekBar = findViewById(R.id.seekSize);
+        TextView textSize = findViewById(R.id.textSize1);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 size = seekBar.getProgress();
+                textSize.setText(String.valueOf(i));
             }
 
             @Override
