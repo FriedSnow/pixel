@@ -12,4 +12,8 @@
     <string name="fill_blue">Fill blue</string>
     <string name="fill_custom">Fill custom</string>
     <string name="grid_side">Grid side size</string>
+    <string name="toast">"Created canvas "</string>
+    <string name="Pixels">" pixels"</string>
+    <string name="About">About</string>
+    <string name="Back">Back</string>
 </resources>

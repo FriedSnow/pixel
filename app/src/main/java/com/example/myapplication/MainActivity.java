@@ -14,19 +14,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    static int size;
+    static int size = 16;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-//        EditText et = (EditText) findViewById(R.id.editSize);
-//        String text = et.getText().toString();
-//        size = Character.getNumericValue(text.length());
-
-//        EditText editText = findViewById(R.id.editSize);
         SeekBar seekBar = findViewById(R.id.seekSize);
         TextView textSize = findViewById(R.id.textSize1);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -35,32 +31,28 @@ public class MainActivity extends AppCompatActivity {
                 size = seekBar.getProgress();
                 textSize.setText(String.valueOf(i));
             }
-
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
 
             }
-
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
             }
         });
-
-//        String strValue = editText.getText().toString();
-//            if (!strValue.isEmpty()) {
-//        size = Integer.parseInt(strValue);
-//        }
-//            else {
-//        System.out.println("ЪЕЬ");
-//        }
-
     }
     public int getSize(){
         return size;
     }
     public void toStart(View view) {
         Intent intent = new Intent(this, StartActivity.class);
+        startActivity(intent);
+        Toast toast = Toast.makeText(this,  getString(R.string.toast) + size + " x " + size + getString(R.string.Pixels),Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+    public void toAbout(View view) {
+        Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
     }
 }
