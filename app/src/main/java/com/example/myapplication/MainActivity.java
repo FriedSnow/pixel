@@ -12,8 +12,10 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.SeekBar;
+
 public class MainActivity extends AppCompatActivity {
-    public int size = 16;
+    public int size;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,14 +26,31 @@ public class MainActivity extends AppCompatActivity {
 //        size = Character.getNumericValue(text.length());
 
         EditText editText = findViewById(R.id.editSize);
+        SeekBar seekBar = findViewById(R.id.seekSize);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                size = seekBar.getProgress();
+            }
 
-            String strValue = editText.getText().toString();
-                if (!strValue.isEmpty()) {
-            size = Integer.parseInt(strValue);
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
             }
-                else {
-            System.out.println("ЪЕЬ");
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
+        });
+
+//        String strValue = editText.getText().toString();
+//            if (!strValue.isEmpty()) {
+//        size = Integer.parseInt(strValue);
+//        }
+//            else {
+//        System.out.println("ЪЕЬ");
+//        }
 
     }
     public int getSize(){

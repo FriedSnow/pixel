@@ -59,4 +59,22 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <SeekBar
+        android:id="@+id/seekSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:min="16"
+        android:max="32"
+        app:layout_constraintBottom_toTopOf="@id/textInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintStart_toStartOf="parent">
+
+
+    </SeekBar>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
