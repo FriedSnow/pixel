@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 
 public class MainActivity extends AppCompatActivity {
-    public int size;
+    static int size;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
