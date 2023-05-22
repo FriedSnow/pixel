@@ -27,7 +27,7 @@ public class StartActivity extends AppCompatActivity {
     public int pxn = (int)Math.pow(side,2);     //количество пикселей = сторона * сторона
     private GridView gridView;
     SeekBar sA, sR, sG, sB;
-    TextView tA, tR, tG, tB;
+    TextView tA, tR, tG, tB, clr;
     int cA = 255, cR = 0, cG = 255, cB = 0;     //дефолтные значения слайдеров и настроек цвета
 
     //TODO стартовая активити, с выбором размера холста
@@ -52,11 +52,14 @@ public class StartActivity extends AppCompatActivity {
         tG = findViewById(R.id.textG1);
         tB = findViewById(R.id.textB1);
 
+        clr = findViewById(R.id.curClr);
+
         sA.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 cA = sA.getProgress();
                 tA.setText(String.valueOf(i));
+                clr.setBackgroundColor(Color.argb(cA, cR, cG, cB));
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -72,6 +75,7 @@ public class StartActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 cR = sR.getProgress();
                 tR.setText(String.valueOf(i));
+                clr.setBackgroundColor(Color.argb(cA, cR, cG, cB));
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -87,6 +91,7 @@ public class StartActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 cG = sG.getProgress();
                 tG.setText(String.valueOf(i));
+                clr.setBackgroundColor(Color.argb(cA, cR, cG, cB));
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -102,6 +107,7 @@ public class StartActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 cB = sB.getProgress();
                 tB.setText(String.valueOf(i));
+                clr.setBackgroundColor(Color.argb(cA, cR, cG, cB));
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {

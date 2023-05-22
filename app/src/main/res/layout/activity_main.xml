@@ -40,7 +40,7 @@
         android:thumb="@drawable/thumb_alpha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/curClr" />
 
     <SeekBar
         android:id="@+id/seekR"
@@ -177,6 +177,24 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/seekB"
         app:layout_constraintStart_toEndOf="@id/textB" />
+
+    <TextView
+        android:id="@+id/curClr"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/Current"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#FF00FF00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

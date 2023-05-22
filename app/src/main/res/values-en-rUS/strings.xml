@@ -16,4 +16,5 @@
     <string name="Pixels">" pixels"</string>
     <string name="About">About</string>
     <string name="Back">Back</string>
+    <string name="Current">Current Color</string>
 </resources>

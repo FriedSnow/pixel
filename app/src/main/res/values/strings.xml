@@ -17,4 +17,5 @@
     <string name="Pixels"> пикселей</string>
     <string name="About">О программе</string>
     <string name="Back">Назад</string>
+    <string name="Current">Текущий цвет</string>
 </resources>

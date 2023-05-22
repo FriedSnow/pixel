@@ -73,7 +73,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:min="16"
+        android:min="1"
+        android:progress="16"
         android:max="32"
 
         app:layout_constraintBottom_toTopOf="@id/textView"
