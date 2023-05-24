@@ -16,7 +16,9 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -171,9 +173,9 @@ public class StartActivity extends AppCompatActivity {
     }
 
 
-    public void toSave(MenuItem item) {
-
-    }
+//    public void toSave(MenuItem item){
+//        Toast.makeText(this,  getString(R.string.Sorry),Toast.LENGTH_SHORT).show();
+//    }
 
 
     private class MyAdapter extends BaseAdapter {   //А? даптер
@@ -202,7 +204,6 @@ public class StartActivity extends AppCompatActivity {
             }
 
             TextView textView = view.findViewById(R.id.text_view);
-            //textView.setText("");                                   //заполнение массива пустыми символами чтобы работало
             int wid = gridView.getWidth()/(side+(side/2));            //получение ширины и +(side/2) к стороне чтобы не плющило (?)
             textView.setTextSize(TypedValue.DENSITY_DEFAULT, wid);    //установка высоты строки через размер текста
 

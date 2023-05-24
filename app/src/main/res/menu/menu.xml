@@ -25,9 +25,9 @@
         android:title="@string/fill_custom"
         android:onClick="toKek">
     </item>
-    <item
-        android:id="@+id/action_save"
-        android:title="@string/Save"
-        android:onClick="toSave">
-    </item>
+<!--    <item-->
+<!--        android:id="@+id/action_save"-->
+<!--        android:title="@string/Save"-->
+<!--        android:onClick="toSave">-->
+<!--    </item>-->
 </menu>

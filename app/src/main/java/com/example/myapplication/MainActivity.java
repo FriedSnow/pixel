@@ -47,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
     public void toStart(View view) {
         Intent intent = new Intent(this, StartActivity.class);
         startActivity(intent);
-        Toast toast = Toast.makeText(this,  getString(R.string.toast) + size + " x " + size + getString(R.string.Pixels),Toast.LENGTH_SHORT);
-        toast.show();
+        Toast.makeText(this,  getString(R.string.toast) + size + " x " + size + getString(R.string.Pixels),Toast.LENGTH_SHORT).show();
     }
 
     public void toAbout(View view) {

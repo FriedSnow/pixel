@@ -18,4 +18,5 @@
     <string name="About">О программе</string>
     <string name="Back">Назад</string>
     <string name="Current">Текущий цвет</string>
+    <string name="Sorry">Не реализовано</string>
 </resources>
