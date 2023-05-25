@@ -192,9 +192,32 @@
         android:gravity="center"
         android:background="#FF00FF00"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/paint"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
+    <TextView
+        android:id="@+id/erase"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:text=""
+        android:onClick="toErase"
+        android:layout_marginStart="8dp"
+        android:foreground="@drawable/ic_erase_foreground"
+        android:background="@drawable/is_disable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout"/>
+
+    <TextView
+        android:id="@+id/paint"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:text=""
+        android:onClick="toPaint"
+        android:layout_marginStart="8dp"
+        android:foreground="@drawable/ic_brush_foreground"
+        android:background="@drawable/is_enable"
+        app:layout_constraintStart_toEndOf="@id/erase"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

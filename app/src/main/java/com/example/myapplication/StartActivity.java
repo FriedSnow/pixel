@@ -2,8 +2,11 @@ package com.example.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -29,8 +32,9 @@ public class StartActivity extends AppCompatActivity {
     public int pxn = (int)Math.pow(side,2);     //количество пикселей = сторона * сторона
     private GridView gridView;
     SeekBar sA, sR, sG, sB;
-    TextView tA, tR, tG, tB, clr;
+    TextView tA, tR, tG, tB, clr, ers, pnt;
     int cA = 255, cR = 0, cG = 255, cB = 0;     //дефолтные значения слайдеров и настроек цвета
+    public boolean isErase = false, isPaint = true;
 
     //TODO стартовая активити, с выбором размера холста
     //TODO выпадающий список с кнопкой о̶ч̶и̶с̶т̶к̶и̶ ̶и̶ сейва
@@ -55,6 +59,9 @@ public class StartActivity extends AppCompatActivity {
         tB = findViewById(R.id.textB1);
 
         clr = findViewById(R.id.curClr);
+
+        ers = findViewById(R.id.erase);
+        pnt = findViewById(R.id.paint);
 
         sA.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -129,9 +136,16 @@ public class StartActivity extends AppCompatActivity {
         MyAdapter adapter = new MyAdapter(items);
         gridView.setAdapter(adapter);
 
+
         gridView.setOnItemClickListener((parent, view, position, id) -> {
-            view.setBackgroundColor(Color.argb(cA,cR,cG,cB));
+            if (isPaint) {
+                view.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+            }
+            if (isErase) {
+                view.setBackgroundColor(Color.argb(0, 0, 0, 0));
+            }
         });
+
 
 
         adjustGridView();               //применить настройки грида
@@ -172,10 +186,23 @@ public class StartActivity extends AppCompatActivity {
         }
     }
 
+    public void toErase(View view){
+        isErase = true;
+        isPaint = false;
+        ers.setBackgroundResource(R.drawable.is_enable);
+        pnt.setBackgroundResource(R.drawable.is_disable);
+        Toast.makeText(this,  getString(R.string.Eraser),Toast.LENGTH_SHORT).show();
+    }
+    public void toPaint(View view){
+        isPaint = true;
+        isErase = false;
+        pnt.setBackgroundResource(R.drawable.is_enable);
+        ers.setBackgroundResource(R.drawable.is_disable);
+        Toast.makeText(this,  getString(R.string.Paint),Toast.LENGTH_SHORT).show();
+    }
 
-//    public void toSave(MenuItem item){
-//        Toast.makeText(this,  getString(R.string.Sorry),Toast.LENGTH_SHORT).show();
-//    }
+
+//
 
 
     private class MyAdapter extends BaseAdapter {   //А? даптер

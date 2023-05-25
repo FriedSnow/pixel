@@ -17,4 +17,6 @@
     <string name="About">About</string>
     <string name="Back">Back</string>
     <string name="Current">Current Color</string>
+    <string name="Eraser">Eraser</string>
+    <string name="Paint">Paint</string>
 </resources>
