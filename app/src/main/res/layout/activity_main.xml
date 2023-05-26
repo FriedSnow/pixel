@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
-        android:layout_height="380dp"
+        android:layout_height="360dp"
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -191,7 +191,7 @@
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/paint"
+        app:layout_constraintStart_toEndOf="@id/debug2"
         app:layout_constraintTop_toTopOf="@id/paint"
         app:layout_constraintBottom_toBottomOf="@id/paint"/> />
 
@@ -217,6 +217,31 @@
         android:foreground="@drawable/ic_brush_foreground"
         android:background="@drawable/is_enable"
         app:layout_constraintStart_toEndOf="@id/erase"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout"/>
+
+    <TextView
+        android:id="@+id/debug1"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:text="X"
+        android:textStyle="bold"
+        android:textColor="@color/white_chess"
+        android:gravity="center"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/is_disable"
+        app:layout_constraintStart_toEndOf="@id/paint"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout"/>
+    <TextView
+        android:id="@+id/debug2"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:text="Y"
+        android:textStyle="bold"
+        android:textColor="@color/white_chess"
+        android:gravity="center"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/is_disable"
+        app:layout_constraintStart_toEndOf="@id/debug1"
         app:layout_constraintTop_toBottomOf="@id/constraintLayout"/>
 
 

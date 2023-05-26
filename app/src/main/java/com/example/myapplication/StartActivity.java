@@ -8,6 +8,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.renderscript.Sampler;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -32,7 +33,7 @@ public class StartActivity extends AppCompatActivity {
     public int pxn = (int)Math.pow(side,2);     //количество пикселей = сторона * сторона
     private GridView gridView;
     SeekBar sA, sR, sG, sB;
-    TextView tA, tR, tG, tB, clr, ers, pnt;
+    TextView tA, tR, tG, tB, clr, ers, pnt, deb1, deb2;
     int cA = 255, cR = 0, cG = 255, cB = 0;     //дефолтные значения слайдеров и настроек цвета
     public boolean isErase = false, isPaint = true;
 
@@ -62,6 +63,8 @@ public class StartActivity extends AppCompatActivity {
 
         ers = findViewById(R.id.erase);
         pnt = findViewById(R.id.paint);
+        deb1 = findViewById(R.id.debug1);
+        deb2 = findViewById(R.id.debug2);
 
         sA.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -140,14 +143,13 @@ public class StartActivity extends AppCompatActivity {
         gridView.setOnItemClickListener((parent, view, position, id) -> {
             if (isPaint) {
                 view.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                deb1.setText(String.valueOf(position % side+1));
+                deb2.setText(String.valueOf(position / side+1));
             }
             if (isErase) {
                 view.setBackgroundColor(Color.argb(0, 0, 0, 0));
             }
         });
-
-
-
         adjustGridView();               //применить настройки грида
     }
 
@@ -157,7 +159,6 @@ public class StartActivity extends AppCompatActivity {
         // тк квадратный корень из числа стороны во второй степени
         gridView.setVerticalSpacing(1);             //сетка, можно и без неё
         gridView.setHorizontalSpacing(1);
-
     }
 
     public void toClear(MenuItem item) {
@@ -231,8 +232,8 @@ public class StartActivity extends AppCompatActivity {
             }
 
             TextView textView = view.findViewById(R.id.text_view);
-            int wid = gridView.getWidth()/(side+(side/2));            //получение ширины и +(side/2) к стороне чтобы не плющило (?)
-            textView.setTextSize(TypedValue.DENSITY_DEFAULT, wid);    //установка высоты строки через размер текста
+            double wid = gridView.getWidth()/(side+(side/2.5));            //получение ширины и +(side/2) к стороне чтобы не плющило (?)
+            textView.setTextSize(TypedValue.DENSITY_DEFAULT, (int)wid);    //установка высоты строки через размер текста
 
             return view;
         }
