@@ -177,24 +177,32 @@ public class StartActivity extends AppCompatActivity {
                 int ymxm = position + side - 1;
 
                 //TODO присрать сюда ифэлс который будет нормально рисовать на углах/гранях
+                int divSide = position % side;
+                if (divSide != 0 && //сторона слева
+                        divSide != side - 1 && //сторона справа
+                        position != 0 && // первый пиксель (сверху-слева)
+                        position != pxn && // последний пиксель (снизу-справа)
+                        position > side && // верхний ряд
+                        position < (pxn - side)) { // нижний ряд
 
-                View vxp = gridView.getChildAt(xp);
-                vxp.setBackgroundColor(Color.argb(cA, cR, cG, cB));
-                View vxm = gridView.getChildAt(xm);
-                vxm.setBackgroundColor(Color.argb(cA, cR, cG, cB));
-                View vyx = gridView.getChildAt(yp);
-                vyx.setBackgroundColor(Color.argb(cA, cR, cG, cB));
-                View vym = gridView.getChildAt(ym);
-                vym.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                    View vxp = gridView.getChildAt(xp);
+                    vxp.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                    View vxm = gridView.getChildAt(xm);
+                    vxm.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                    View vyx = gridView.getChildAt(yp);
+                    vyx.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                    View vym = gridView.getChildAt(ym);
+                    vym.setBackgroundColor(Color.argb(cA, cR, cG, cB));
 
-                View vypxm = gridView.getChildAt(ypxm);
-                vypxm.setBackgroundColor(Color.argb(cA, cR, cG, cB));
-                View vypxp = gridView.getChildAt(ypxp);
-                vypxp.setBackgroundColor(Color.argb(cA, cR, cG, cB));
-                View vymxp = gridView.getChildAt(ymxp);
-                vymxp.setBackgroundColor(Color.argb(cA, cR, cG, cB));
-                View vymxm = gridView.getChildAt(ymxm);
-                vymxm.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                    View vypxm = gridView.getChildAt(ypxm);
+                    vypxm.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                    View vypxp = gridView.getChildAt(ypxp);
+                    vypxp.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                    View vymxp = gridView.getChildAt(ymxp);
+                    vymxp.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                    View vymxm = gridView.getChildAt(ymxm);
+                    vymxm.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                }
             }
         });
         adjustGridView();               //применить настройки грида
