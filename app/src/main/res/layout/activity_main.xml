@@ -220,6 +220,20 @@
         app:layout_constraintTop_toBottomOf="@id/constraintLayout"/>
 
     <TextView
+        android:id="@+id/three"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:text="3"
+        android:textStyle="bold"
+        android:textColor="@color/white_chess"
+        android:gravity="center"
+        android:onClick="toThree"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/is_disable"
+        app:layout_constraintStart_toEndOf="@id/paint"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout"/>
+
+    <TextView
         android:id="@+id/debug1"
         android:layout_width="35dp"
         android:layout_height="35dp"
@@ -229,7 +243,7 @@
         android:gravity="center"
         android:layout_marginStart="8dp"
         android:background="@drawable/is_disable"
-        app:layout_constraintStart_toEndOf="@id/paint"
+        app:layout_constraintStart_toEndOf="@id/three"
         app:layout_constraintTop_toBottomOf="@id/constraintLayout"/>
     <TextView
         android:id="@+id/debug2"

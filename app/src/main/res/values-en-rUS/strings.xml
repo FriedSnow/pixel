@@ -19,4 +19,5 @@
     <string name="Current">Current Color</string>
     <string name="Eraser">Eraser</string>
     <string name="Paint">Paint</string>
+    <string name="Three">3 by 3</string>
 </resources>

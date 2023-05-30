@@ -33,9 +33,9 @@ public class StartActivity extends AppCompatActivity {
     public int pxn = (int)Math.pow(side,2);     //количество пикселей = сторона * сторона
     private GridView gridView;
     SeekBar sA, sR, sG, sB;
-    TextView tA, tR, tG, tB, clr, ers, pnt, deb1, deb2;
+    TextView tA, tR, tG, tB, clr, ers, pnt, deb1, deb2, thr;
     int cA = 255, cR = 0, cG = 255, cB = 0;     //дефолтные значения слайдеров и настроек цвета
-    public boolean isErase = false, isPaint = true;
+    public boolean isPaint = true, isErase = false, isThree = false;
 
     //TODO стартовая активити, с выбором размера холста
     //TODO выпадающий список с кнопкой о̶ч̶и̶с̶т̶к̶и̶ ̶и̶ сейва
@@ -63,6 +63,7 @@ public class StartActivity extends AppCompatActivity {
 
         ers = findViewById(R.id.erase);
         pnt = findViewById(R.id.paint);
+        thr = findViewById(R.id.three);
         deb1 = findViewById(R.id.debug1);
         deb2 = findViewById(R.id.debug2);
 
@@ -149,6 +150,50 @@ public class StartActivity extends AppCompatActivity {
             if (isErase) {
                 view.setBackgroundColor(Color.argb(0, 0, 0, 0));
             }
+            if (isThree){
+                view.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+
+                /*
+                xp - корда x+ (справа)
+                xm - корда x- (слева)
+                yp - корда y+ (сверху)
+                ym - корда y- (снизу)
+
+                ypxm - корда y+ x- (сверху слева)
+                ypxp - корда y+ x+ (сверху справа)
+                ymxp - корда y- x+ (снизу справа)
+                ymxm - корда y- x- (снизу слева)
+                оторвите мне руки за это пожалуйста
+                 */
+
+                int xp = position + 1;
+                int xm = position - 1;
+                int yp = position + side;
+                int ym = position - side;
+
+                int ypxm = position - side - 1;
+                int ypxp = position - side + 1;
+                int ymxp = position + side + 1;
+                int ymxm = position + side - 1;
+
+                View vxp = gridView.getChildAt(xp);
+                vxp.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                View vxm = gridView.getChildAt(xm);
+                vxm.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                View vyx = gridView.getChildAt(yp);
+                vyx.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                View vym = gridView.getChildAt(ym);
+                vym.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+
+                View vypxm = gridView.getChildAt(ypxm);
+                vypxm.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                View vypxp = gridView.getChildAt(ypxp);
+                vypxp.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                View vymxp = gridView.getChildAt(ymxp);
+                vymxp.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                View vymxm = gridView.getChildAt(ymxm);
+                vymxm.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+            }
         });
         adjustGridView();               //применить настройки грида
     }
@@ -190,21 +235,30 @@ public class StartActivity extends AppCompatActivity {
     public void toErase(View view){
         isErase = true;
         isPaint = false;
+        isThree = false;
         ers.setBackgroundResource(R.drawable.is_enable);
         pnt.setBackgroundResource(R.drawable.is_disable);
+        thr.setBackgroundResource(R.drawable.is_disable);
         Toast.makeText(this,  getString(R.string.Eraser),Toast.LENGTH_SHORT).show();
     }
     public void toPaint(View view){
         isPaint = true;
         isErase = false;
+        isThree = false;
         pnt.setBackgroundResource(R.drawable.is_enable);
         ers.setBackgroundResource(R.drawable.is_disable);
+        thr.setBackgroundResource(R.drawable.is_disable);
         Toast.makeText(this,  getString(R.string.Paint),Toast.LENGTH_SHORT).show();
     }
-
-
-//
-
+    public void toThree(View view){
+        isThree = true;
+        isPaint = false;
+        isErase = false;
+        thr.setBackgroundResource(R.drawable.is_enable);
+        pnt.setBackgroundResource(R.drawable.is_disable);
+        ers.setBackgroundResource(R.drawable.is_disable);
+        Toast.makeText(this,  getString(R.string.Three),Toast.LENGTH_SHORT).show();
+    }
 
     private class MyAdapter extends BaseAdapter {   //А? даптер
         private List<String> items;
