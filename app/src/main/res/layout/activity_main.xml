@@ -223,7 +223,7 @@
         android:id="@+id/three"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:text="3"
+        android:text="3x3"
         android:textStyle="bold"
         android:textColor="@color/white_chess"
         android:gravity="center"

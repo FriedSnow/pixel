@@ -176,6 +176,8 @@ public class StartActivity extends AppCompatActivity {
                 int ymxp = position + side + 1;
                 int ymxm = position + side - 1;
 
+                //TODO присрать сюда ифэлс который будет нормально рисовать на углах/гранях
+
                 View vxp = gridView.getChildAt(xp);
                 vxp.setBackgroundColor(Color.argb(cA, cR, cG, cB));
                 View vxm = gridView.getChildAt(xm);
