@@ -343,13 +343,15 @@ public class StartActivity extends AppCompatActivity {
         Toast.makeText(this,  getString(R.string.Paint),Toast.LENGTH_SHORT).show();
     }
     public void toThree(View view){
-        isThree = true;
-        isPaint = false;
-        isErase = false;
-        thr.setBackgroundResource(R.drawable.is_enable);
-        pnt.setBackgroundResource(R.drawable.is_disable);
-        ers.setBackgroundResource(R.drawable.is_disable);
-        Toast.makeText(this,  getString(R.string.Three),Toast.LENGTH_SHORT).show();
+        if (side >= 3) {
+            isThree = true;
+            isPaint = false;
+            isErase = false;
+            thr.setBackgroundResource(R.drawable.is_enable);
+            pnt.setBackgroundResource(R.drawable.is_disable);
+            ers.setBackgroundResource(R.drawable.is_disable);
+            Toast.makeText(this, getString(R.string.Three), Toast.LENGTH_SHORT).show();
+        }
     }
 
     private class MyAdapter extends BaseAdapter {   //А? даптер
