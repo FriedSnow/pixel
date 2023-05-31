@@ -9,9 +9,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="0dp"
-        android:layout_height="360dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:background="@color/black"
+        app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -40,7 +41,7 @@
         android:thumb="@drawable/thumb_alpha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/curClr" />
+        app:layout_constraintTop_toBottomOf="@+id/paint" />
 
     <SeekBar
         android:id="@+id/seekR"
@@ -178,22 +179,47 @@
         app:layout_constraintBottom_toTopOf="@+id/seekB"
         app:layout_constraintStart_toEndOf="@id/textB" />
 
-    <TextView
-        android:id="@+id/curClr"
+<!--    <TextView-->
+<!--        android:id="@+id/curClr"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        android:background="#FF00FF00"-->
+<!--        android:gravity="center"-->
+<!--        android:text="@string/Current"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="15sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@id/debug2"-->
+<!--        app:layout_constraintTop_toTopOf="@id/paint"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/paint"/>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="#FF00FF00"
-        android:gravity="center"
-        android:text="@string/Current"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/rounded"
+        app:layout_constraintBottom_toBottomOf="@id/paint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/debug2"
-        app:layout_constraintTop_toTopOf="@id/paint"
-        app:layout_constraintBottom_toBottomOf="@id/paint"/> />
+        app:layout_constraintTop_toTopOf="@id/paint">
+
+        <TextView
+            android:id="@+id/curClr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FF00FF00"
+            android:gravity="center"
+            android:text="@string/Current"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintDimensionRatio="1:1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/erase"
@@ -202,6 +228,7 @@
         android:text=""
         android:onClick="toErase"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:foreground="@drawable/ic_erase_foreground"
         android:background="@drawable/is_disable"
         app:layout_constraintStart_toStartOf="parent"
@@ -214,6 +241,7 @@
         android:text=""
         android:onClick="toPaint"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:foreground="@drawable/ic_brush_foreground"
         android:background="@drawable/is_enable"
         app:layout_constraintStart_toEndOf="@id/erase"
@@ -229,6 +257,7 @@
         android:gravity="center"
         android:onClick="toThree"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/is_disable"
         app:layout_constraintStart_toEndOf="@id/paint"
         app:layout_constraintTop_toBottomOf="@id/constraintLayout"/>
@@ -242,6 +271,7 @@
         android:textColor="@color/white_chess"
         android:gravity="center"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/is_disable"
         app:layout_constraintStart_toEndOf="@id/three"
         app:layout_constraintTop_toBottomOf="@id/constraintLayout"/>
@@ -254,6 +284,7 @@
         android:textColor="@color/white_chess"
         android:gravity="center"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/is_disable"
         app:layout_constraintStart_toEndOf="@id/debug1"
         app:layout_constraintTop_toBottomOf="@id/constraintLayout"/>

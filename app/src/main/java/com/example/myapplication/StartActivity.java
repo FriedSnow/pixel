@@ -152,6 +152,8 @@ public class StartActivity extends AppCompatActivity {
             }
             if (isThree){
                 view.setBackgroundColor(Color.argb(cA, cR, cG, cB));
+                deb1.setText(String.valueOf(position % side+1));
+                deb2.setText(String.valueOf(position / side+1));
 
                 /*
                 xp - корда x+ (справа)
@@ -176,15 +178,14 @@ public class StartActivity extends AppCompatActivity {
                 int ymxp = position + side + 1;
                 int ymxm = position + side - 1;
 
-                //TODO присрать сюда ифэлс который будет нормально рисовать на углах/гранях
+                //TODO п̶р̶и̶д̶е̶л̶а̶т̶ь̶ ̶с̶ю̶д̶а̶ ̶и̶ф̶э̶л̶с̶ ̶к̶о̶т̶о̶р̶ы̶й̶ ̶б̶у̶д̶е̶т̶ ̶н̶о̶р̶м̶а̶л̶ь̶н̶о̶ ̶р̶и̶с̶о̶в̶а̶т̶ь̶ ̶н̶а̶ ̶у̶г̶л̶а̶х̶/̶г̶р̶а̶н̶я̶х̶
                 int divSide = position % side;
-                if (
-                        divSide != 0 && //сторона слева //
-                        divSide != side - 1 && //сторона справа  //
-                        position != 0 && // первый пиксель (сверху-слева) //
-                        position != pxn && // последний пиксель (снизу-справа) //
+                if (divSide != 0 && //сторона слева
+                        divSide != side - 1 && //сторона справа
+                        position != 0 && // первый пиксель (сверху-слева)
+                        position != pxn && // последний пиксель (снизу-справа)
                         position > side && // верхний ряд
-                        position < (pxn - side)) { // нижний ряд //
+                        position < (pxn - side)){ // нижний ряд
                     
                     View vxp = gridView.getChildAt(xp);
                     vxp.setBackgroundColor(Color.argb(cA, cR, cG, cB)); //X+
@@ -220,7 +221,7 @@ public class StartActivity extends AppCompatActivity {
                     View vypxm = gridView.getChildAt(ypxm);
                     vypxm.setBackgroundColor(Color.argb(cA, cR, cG, cB)); //Y+ X-
                 }
-                if (divSide == 0 && position != 0 && position < (pxn - side)){             // слева
+                if (divSide == 0 && position != 0 && position < (pxn - side) && position >= side){             // слева
                     View vxp = gridView.getChildAt(xp);
                     vxp.setBackgroundColor(Color.argb(cA, cR, cG, cB)); //X+
                     View vyx = gridView.getChildAt(yp);
@@ -253,7 +254,7 @@ public class StartActivity extends AppCompatActivity {
                     View vypxm = gridView.getChildAt(ypxm);
                     vypxm.setBackgroundColor(Color.argb(cA, cR, cG, cB)); //Y+ X-
                 }
-                if (position <= side && position != 0 && position != side - 1){           // сверху
+                if (position <= side - 1 && position != 0 && position != side - 1){           // сверху
                     View vym = gridView.getChildAt(ym);
                     vym.setBackgroundColor(Color.argb(cA, cR, cG, cB)); //Y-
                     View vxp = gridView.getChildAt(xp);
